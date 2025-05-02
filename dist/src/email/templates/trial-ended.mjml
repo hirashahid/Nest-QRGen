@@ -1,0 +1,106 @@
+<mjml>
+  <mj-head>
+    <mj-title>QRGEN - Accept Invitation</mj-title>
+    <mj-font name="Montserrat" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <mj-attributes>
+      <mj-all font-family="Montserrat, Arial, sans-serif" />
+      <mj-text font-weight="400" font-size="16px" color="#ffffff" line-height="24px" />
+      <mj-section padding="0px" background-color="#1B2C37" />
+    </mj-attributes>
+    <mj-style>
+      .link-text {
+        color: #00e5c7;
+      }
+
+      .footer-text {
+        font-size: 14px;
+      }
+
+      .social-icon {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      .footer-link {
+        color: #00e5c7;
+        text-decoration: none;
+      }
+
+      .no-decoration {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      @media (max-width: 480px) {
+        .responsive-text {
+          font-size: 20px !important;
+        }
+      }
+    </mj-style>
+  </mj-head>˝
+  <mj-body background-color="#ffffff">
+    <mj-section padding="20px 0">
+      <mj-column>
+        <mj-text align="center">
+          <img width="218px" height="60px" src="https://stage25.qr-gen.com/uploads/files/Group%207382-m973aumv.png" alt="QRGEN QR Code" />
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 20px">
+      <mj-column>
+        <mj-text align="center" font-size="28px" font-weight="bold" padding-bottom="20px" css-class="responsive-text" line-height="35px">
+          Your free trial Has Ended
+        </mj-text>
+        <mj-text padding-bottom="10px" css-class="no-decoration">
+          We hope that you enjoyed using our QR Code generator and exploring its full range of capabilities. Sadly, your free trial period is now over, as a result your QR Codes are no longer active.
+        </mj-text>
+        <mj-text padding-bottom="10px">
+          Don’t worry, your QR Codes have not disappeared and will remain in your account. You will still be able to view your QR Code(s)  but won’t be able to generate new ones, edit, or use them until you upgrade your account to a paid plan.
+        </mj-text>
+        <mj-text padding-bottom="20px">
+          If you’d like your QR Codes to continue working when they’re scanned, please upgrade to paid plan.
+        </mj-text>
+        <mj-button href='https://qr-gen.com/plans' background-color="#00e5c7" color="#1a2730" font-weight="bold" border-radius="4px" font-size="18px" inner-padding="15px 30px">
+          Activate My QR Codes
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 20px">
+      <mj-column>
+        <mj-text font-size="16px" font-weight="400px" line-height="100%">
+          If you have any questions or concerns, please reply to this email or refer to our<a href="https://qr-gen.com/faq" class="footer-link"> FAQ page</a>.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="10px">
+      <mj-column>
+        <mj-social font-size="15px" icon-size="40px" mode="horizontal" padding="10px" align="center">
+          <mj-social-element name="linkedin" href="https://www.linkedin.com/" background-color="#0077B5" />
+          <mj-social-element name="instagram" href="https://www.instagram.com/" background-color="#E1306C" />
+          <mj-social-element name="facebook" href="https://www.facebook.com/" background-color="#3b5998" />
+          <mj-social-element name="youtube" href="https://www.youtube.com/" background-color="#FF0000" />
+        </mj-social>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 10px">
+      <mj-column>
+        <mj-text align="center" font-weight="400px" line-height="100%">
+          If you have any questions or concerns, please reply this email.
+        </mj-text>
+        <mj-text align="center" line-height="100%">
+          © 2024 QRGEN, Inc. All rights reserved.
+        </mj-text>
+        <mj-text align="center" line-height="100%">
+          548 Market St #63411, San Francisco, CA 94104-5401
+        </mj-text>
+        <mj-text align="center" font-size="14px">
+          <a href="#" class="footer-link">Privacy policy</a> | <a href="#" class="footer-link">Contact us</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

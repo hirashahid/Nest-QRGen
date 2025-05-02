@@ -1,0 +1,520 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EXAMPLE_BULK_QR_STYLE = exports.EXAMPLE_EVENT_PAYLOAD = exports.EXAMPLE_EMAIL_QR_DATA = exports.EXAMPLE_QR_STYLE = exports.MEMBER_SELECT_RESPONSE = exports.TEST_CARD_TOKEN = exports.AMOUNT = exports.CURRENCY = exports.EXAMPLE_USER_ID = exports.STRIPE_LINE_ITEMS_REFERENCE = exports.STRIPE_ADDRESS_SOURCE = exports.STRIPE_API_KEY = exports.STRIPE_API_VERSION = exports.qrCodeRelations = exports.qrCodeSelectResponse = exports.DEFAULT_THROTTLE_REQ_LIMIT = exports.DEFAULT_THROTTLE_TTL = exports.COLOR_VALIDATION_MESSAGE = exports.COLOR_REGEX = exports.TEST_EVENT = exports.TEST_USER = exports.GetByIdDto = exports.SAFE_INTEGER_MAX = exports.AWS_SQS_QUEUE_NAME = exports.EXCHANGE_RATE_API_URL = exports.COUNTRY_CURRENCIES = exports.IP_API_URL = exports.FACEBOOK_GRAPH_API = exports.EXAMPLE_TEMPLATE_STYLE = void 0;
+const swagger_1 = require("@nestjs/swagger");
+const class_transformer_1 = require("class-transformer");
+const class_validator_1 = require("class-validator");
+exports.EXAMPLE_TEMPLATE_STYLE = {
+    shape: {
+        backgroundColor: '#ffffff',
+        color: '#000000',
+        style: 'square',
+    },
+    corners: {
+        dotColor: '#ff0000',
+        squareColor: '#00ff00',
+        squareStyle: 'square',
+        dotStyle: 'circle',
+    },
+    logo: 'https://example.com/logo.png',
+    frame: {
+        id: 1,
+        color: '#0000ff',
+        text: 'Scan Me',
+        fontSize: 16,
+        backgroundColor: '#f0f0f0',
+        textColor: '#000000',
+    },
+    errorCorrectionLevel: 'H',
+};
+exports.FACEBOOK_GRAPH_API = `https://graph.facebook.com/me`;
+exports.IP_API_URL = 'http://ip-api.com/json/';
+exports.COUNTRY_CURRENCIES = {
+    AF: 'AFN',
+    AL: 'ALL',
+    DZ: 'DZD',
+    AS: 'USD',
+    AD: 'EUR',
+    AO: 'AOA',
+    AI: 'XCD',
+    AQ: 'XCD',
+    AG: 'XCD',
+    AR: 'ARS',
+    AM: 'AMD',
+    AW: 'AWG',
+    AU: 'AUD',
+    AT: 'EUR',
+    AZ: 'AZN',
+    BS: 'BSD',
+    BH: 'BHD',
+    BD: 'BDT',
+    BB: 'BBD',
+    BY: 'BYN',
+    BE: 'EUR',
+    BZ: 'BZD',
+    BJ: 'XOF',
+    BM: 'BMD',
+    BT: 'BTN',
+    BO: 'BOB',
+    BA: 'BAM',
+    BW: 'BWP',
+    BR: 'BRL',
+    BN: 'BND',
+    BG: 'BGN',
+    BF: 'XOF',
+    BI: 'BIF',
+    KH: 'KHR',
+    CM: 'XAF',
+    CA: 'CAD',
+    CV: 'CVE',
+    KY: 'KYD',
+    CF: 'XAF',
+    TD: 'XAF',
+    CL: 'CLP',
+    CN: 'CNY',
+    CO: 'COP',
+    KM: 'KMF',
+    CG: 'XAF',
+    CR: 'CRC',
+    CI: 'XOF',
+    HR: 'HRK',
+    CU: 'CUP',
+    CY: 'EUR',
+    CZ: 'CZK',
+    DK: 'DKK',
+    DJ: 'DJF',
+    DM: 'XCD',
+    DO: 'DOP',
+    EC: 'USD',
+    EG: 'EGP',
+    SV: 'USD',
+    GQ: 'XAF',
+    ER: 'ERN',
+    EE: 'EUR',
+    ET: 'ETB',
+    FJ: 'FJD',
+    FI: 'EUR',
+    FR: 'EUR',
+    GA: 'XAF',
+    GM: 'GMD',
+    GE: 'GEL',
+    DE: 'EUR',
+    GH: 'GHS',
+    GI: 'GIP',
+    GR: 'EUR',
+    GD: 'XCD',
+    GU: 'USD',
+    GT: 'GTQ',
+    GN: 'GNF',
+    GW: 'XOF',
+    GY: 'GYD',
+    HT: 'HTG',
+    HN: 'HNL',
+    HK: 'HKD',
+    HU: 'HUF',
+    IS: 'ISK',
+    IN: 'INR',
+    ID: 'IDR',
+    IR: 'IRR',
+    IQ: 'IQD',
+    IE: 'EUR',
+    IL: 'ILS',
+    IT: 'EUR',
+    JM: 'JMD',
+    JP: 'JPY',
+    JO: 'JOD',
+    KZ: 'KZT',
+    KE: 'KES',
+    KI: 'AUD',
+    KR: 'KRW',
+    KW: 'KWD',
+    KG: 'KGS',
+    LA: 'LAK',
+    LV: 'EUR',
+    LB: 'LBP',
+    LS: 'LSL',
+    LR: 'LRD',
+    LY: 'LYD',
+    LI: 'CHF',
+    LT: 'EUR',
+    LU: 'EUR',
+    MG: 'MGA',
+    MW: 'MWK',
+    MY: 'MYR',
+    MV: 'MVR',
+    ML: 'XOF',
+    MT: 'EUR',
+    MH: 'USD',
+    MR: 'MRU',
+    MU: 'MUR',
+    MX: 'MXN',
+    FM: 'USD',
+    MD: 'MDL',
+    MC: 'EUR',
+    MN: 'MNT',
+    ME: 'EUR',
+    MA: 'MAD',
+    MZ: 'MZN',
+    MM: 'MMK',
+    NA: 'NAD',
+    NR: 'AUD',
+    NP: 'NPR',
+    NL: 'EUR',
+    NZ: 'NZD',
+    NI: 'NIO',
+    NE: 'XOF',
+    NG: 'NGN',
+    NO: 'NOK',
+    OM: 'OMR',
+    PK: 'PKR',
+    PW: 'USD',
+    PA: 'PAB',
+    PG: 'PGK',
+    PY: 'PYG',
+    PE: 'PEN',
+    PH: 'PHP',
+    PL: 'PLN',
+    PT: 'EUR',
+    QA: 'QAR',
+    RO: 'RON',
+    RU: 'RUB',
+    RW: 'RWF',
+    KN: 'XCD',
+    LC: 'XCD',
+    VC: 'XCD',
+    WS: 'WST',
+    SM: 'EUR',
+    ST: 'STN',
+    SA: 'SAR',
+    SN: 'XOF',
+    RS: 'RSD',
+    SC: 'SCR',
+    SL: 'SLL',
+    SG: 'SGD',
+    SK: 'EUR',
+    SI: 'EUR',
+    SB: 'SBD',
+    SO: 'SOS',
+    ZA: 'ZAR',
+    SS: 'SSP',
+    ES: 'EUR',
+    LK: 'LKR',
+    SD: 'SDG',
+    SR: 'SRD',
+    SE: 'SEK',
+    CH: 'CHF',
+    SY: 'SYP',
+    TW: 'TWD',
+    TJ: 'TJS',
+    TZ: 'TZS',
+    TH: 'THB',
+    TL: 'USD',
+    TG: 'XOF',
+    TO: 'TOP',
+    TT: 'TTD',
+    TN: 'TND',
+    TR: 'TRY',
+    TM: 'TMT',
+    TV: 'AUD',
+    UG: 'UGX',
+    UA: 'UAH',
+    AE: 'AED',
+    GB: 'GBP',
+    US: 'USD',
+    UY: 'UYU',
+    UZ: 'UZS',
+    VU: 'VUV',
+    VA: 'EUR',
+    VE: 'VES',
+    VN: 'VND',
+    YE: 'YER',
+    ZM: 'ZMW',
+    ZW: 'USD',
+};
+exports.EXCHANGE_RATE_API_URL = 'https://api.exchangerate-api.com/v4/latest/';
+exports.AWS_SQS_QUEUE_NAME = 'AWS_SQS_QUEUE';
+exports.SAFE_INTEGER_MAX = 2147483647;
+class GetByIdDto {
+}
+exports.GetByIdDto = GetByIdDto;
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1, description: 'User ID' }),
+    (0, class_transformer_1.Type)(() => Number),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsInt)({
+        message: 'id must be a valid integer without special characters or letters',
+    }),
+    (0, class_validator_1.Min)(1),
+    (0, class_validator_1.Max)(exports.SAFE_INTEGER_MAX),
+    __metadata("design:type", Number)
+], GetByIdDto.prototype, "id", void 0);
+exports.TEST_USER = {
+    id: 1,
+    name: 'Test User',
+    email: 'test@example.com',
+    stripeCustomerId: 'cus_test123',
+    subscriptionStatus: 'active',
+    password: 'securepassword',
+};
+exports.TEST_EVENT = {
+    id: 1,
+    name: 'Test Event',
+    description: 'Test Description',
+    url: 'http://test.com',
+    userId: 1,
+    time: new Date(),
+};
+exports.COLOR_REGEX = /^(#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})|rgb\((\s*\d{1,3},\s*\d{1,3},\s*\d{1,3})\)|[a-zA-Z]+)$/;
+exports.COLOR_VALIDATION_MESSAGE = 'Value must be a valid hex, RGB, or CSS named color';
+exports.DEFAULT_THROTTLE_TTL = 60000;
+exports.DEFAULT_THROTTLE_REQ_LIMIT = 100;
+exports.qrCodeSelectResponse = {
+    id: true,
+    user_id: true,
+    status: true,
+    type: true,
+    name: true,
+    scanCount: true,
+    content: {},
+    stats: {},
+    style: {},
+    schedule: {},
+    qrImage: true,
+    qr_type: {
+        id: true,
+        name: true,
+    },
+    folder: {
+        id: true,
+        name: true,
+    },
+    domain: {
+        id: true,
+        name: true,
+    },
+    redirectUrl: true,
+    visits: true,
+    qr_string: true,
+    scanLimit: true,
+    accessPassword: true,
+    activePassword: true,
+    googleAnalyticsId: true,
+    facebookPixelId: true,
+    trackEvents: true,
+    isFavorite: true,
+    googleTagManagerId: true,
+    allowScanLimit: true,
+    text: true,
+    createdAt: true,
+    updatedAt: true,
+    expiresAt: true,
+    lastScanAt: true,
+};
+exports.qrCodeRelations = {
+    qr_type: true,
+    folder: true,
+    domain: true,
+};
+exports.STRIPE_API_VERSION = '2025-02-24.acacia';
+exports.STRIPE_API_KEY = 'STRIPE_API_KEY';
+exports.STRIPE_ADDRESS_SOURCE = 'billing';
+exports.STRIPE_LINE_ITEMS_REFERENCE = 'L1';
+exports.EXAMPLE_USER_ID = 1;
+exports.CURRENCY = 'usd';
+exports.AMOUNT = 1099;
+exports.TEST_CARD_TOKEN = 'tok_visa';
+exports.MEMBER_SELECT_RESPONSE = {
+    id: true,
+    name: true,
+    email: true,
+    parentAccountId: true,
+    createdAt: true,
+    canDeleteAccount: true,
+    registrationComplete: true,
+    last_login: true,
+    isMember: true,
+    userPermissions: {},
+    memberRole: {
+        id: true,
+        name: true,
+    },
+    folders: {
+        id: true,
+        name: true,
+    },
+    modules: {
+        id: true,
+        name: true,
+    },
+    members: {
+        id: true,
+        name: true,
+        email: true,
+        parentAccountId: true,
+        createdAt: true,
+        canDeleteAccount: true,
+        registrationComplete: true,
+        last_login: true,
+        isMember: true,
+        userPermissions: {},
+        memberRole: {
+            id: true,
+            name: true,
+        },
+        folders: {
+            id: true,
+            name: true,
+        },
+        modules: {
+            id: true,
+            name: true,
+        },
+    },
+};
+exports.EXAMPLE_QR_STYLE = {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg',
+    shape: {
+        backgroundColor: {
+            type: "gradient",
+            gradient: {
+                type: 'radial',
+                rotation: 45,
+                colorStops: [
+                    {
+                        color: '#6a1a4c',
+                        offset: 0,
+                    },
+                    {
+                        color: '#f0f0f0',
+                        offset: 1,
+                    },
+                ],
+            },
+        },
+        color: {
+            type: "gradient",
+            gradient: {
+                type: 'radial',
+                colorStops: [
+                    {
+                        color: '#6a1a4c',
+                        offset: 0,
+                    },
+                    {
+                        color: '#e83e8c',
+                        offset: 1,
+                    },
+                ],
+            },
+        },
+        style: 'rounded',
+    },
+    corners: {
+        squareStyle: 'rounded',
+        dotStyle: 'sqaure',
+        squareColor: {
+            type: "color",
+            color: '#000000',
+        },
+        dotColor: {
+            type: "gradient",
+            gradient: {
+                type: 'linear',
+                colorStops: [
+                    {
+                        color: '#6a1a4c',
+                        offset: 0,
+                    },
+                    {
+                        color: '#000000',
+                        offset: 1,
+                    },
+                ],
+            },
+        },
+    },
+    errorCorrectionLevel: 'Q',
+};
+exports.EXAMPLE_EMAIL_QR_DATA = {
+    email: 'test@example.com',
+    subject: 'Special Offer',
+    body: "Here's your 20% discount code: SAVE20",
+};
+exports.EXAMPLE_EVENT_PAYLOAD = {
+    imageGridType: 'horizontalAlign',
+    qrName: 'tech-expo-2025',
+    titleFontFamily: 'Lato',
+    TextFontFamily: 'Lato',
+    eventImgUpload: [
+        {
+            file: '/assets/eventDemoImg--jXa9_6R.webp',
+        },
+    ],
+    eventDescription: 'Join us for the Annual Tech Expo 2025.',
+    eventWebsite: 'https://techexpo2025.com',
+    globalSearchAddress: '123 Innovation Ave, Silicon Valley, CA',
+};
+exports.EXAMPLE_BULK_QR_STYLE = {
+    shape: {
+        backgroundColor: '#ffffff',
+        color: '#000000',
+        style: {
+            Shape: 'dots',
+            eyeRadius: [5, 5, 5, 5],
+        },
+        Value: '#ffffff',
+        qrstyle: {
+            position: 'absolute',
+            top: '41%',
+            left: '50%',
+            width: '146px',
+            height: '146px',
+            transform: 'translateX(-50%) translateY(-50%)',
+            margin: 'auto',
+        },
+        qrtext: 'Scan Me !!',
+        qrtextstyle: {
+            position: 'absolute',
+            top: '71%',
+            left: '22%',
+            textAlign: 'center',
+            width: '190px',
+            color: 'white',
+            overflow: 'hidden',
+        },
+        matchcomponent: '',
+        activeindex: 2,
+    },
+    corners: {
+        dotColor: {
+            cornerColor: '#de1b1b',
+            centerColor: '#dd3c3c',
+        },
+        squareColor: '#de1b1b',
+        squareStyle: 'square',
+        dotStyle: {
+            selectedCornerShape: [0, 40, 0, 40],
+            selectedCenterShape: [0, 40, 40, 0],
+        },
+    },
+    logo: 'https://qr24gen.s3.us-east-2.amazonaws.com/uploads/qr_logo/1732269929_5518094_camera_photo_photography_picture_icon.svg',
+    frame: {
+        id: 1,
+        color: '#682727',
+        text: 'Scan Me',
+        fontSize: 16,
+        backgroundColor: '#ab3f3f',
+        textColor: '#2f2d2d',
+    },
+    errorCorrectionLevel: 'H',
+};
+//# sourceMappingURL=constants.js.map

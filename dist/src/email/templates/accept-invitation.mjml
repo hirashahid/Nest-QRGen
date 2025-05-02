@@ -1,0 +1,112 @@
+<mjml>
+  <mj-head>
+    <mj-title>QRGEN - Accept Invitation</mj-title>
+    <mj-font name="Montserrat" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <mj-attributes>
+      <mj-all font-family="Montserrat, Arial, sans-serif" />
+      <mj-text font-weight="400" font-size="16px" color="#ffffff" line-height="24px" />
+      <mj-section padding="0px" background-color="#1B2C37" />
+    </mj-attributes>
+    <mj-style>
+      .link-text {
+        color: #00e5c7;
+      }
+
+      .footer-text {
+        font-size: 14px;
+      }
+
+      .social-icon {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      .footer-link {
+        color: #00e5c7;
+        text-decoration: none;
+      }
+
+      .no-decoration {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      @media (max-width: 480px) {
+        .responsive-text {
+          font-size: 20px !important;
+        }
+      }
+    </mj-style>
+  </mj-head>˝
+  <mj-body background-color="#ffffff">
+    <mj-section padding="20px 0">
+      <mj-column>
+        <mj-text align="center">
+          <img width="218px" height="60px" src="https://stage25.qr-gen.com/uploads/files/Group%207382-m973aumv.png" alt="QRGEN QR Code" />
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 20px">
+      <mj-column>
+        <mj-text align="center" font-size="28px" font-weight="bold" padding-bottom="20px" css-class="responsive-text" line-height="35px">
+          Accept an invitation and activate the account
+        </mj-text>
+        <mj-text padding-bottom="10px" css-class="no-decoration">
+          <a class="no-decoration">{{emailFrom}}</a> has sent you an invitation to access the QRGEN service.
+        </mj-text>
+        <mj-text padding-bottom="30px">
+          To accept the invitation you must click on the button
+        </mj-text>
+        <mj-button href={{inviteLink}} background-color="#00e5c7" color="#1a2730" font-weight="bold" border-radius="4px" font-size="18px" inner-padding="15px 30px">
+          Active account
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 20px">
+      <mj-column>
+        <mj-text font-size="16px" font-weight="400px" line-height="100%">
+          If you cannot see the "<span class="link-text">Active account</span>" button, please copy and paste the following link into your browser:
+        </mj-text>
+        <mj-text font-size="16px" font-weight="400px" line-height="100%">
+          <a class="no-decoration">{{inviteLink}}</a>
+        </mj-text>
+        <mj-text line-height="100%">
+          If you have any questions or concerns, please reply to this email.
+        </mj-text>
+        <mj-text padding-bottom="0px">
+          Sincerely, the QRGEN team.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="10px">
+      <mj-column>
+        <mj-social font-size="15px" icon-size="40px" mode="horizontal" padding="10px" align="center">
+          <mj-social-element name="linkedin" href="https://www.linkedin.com/" background-color="#0077B5" />
+          <mj-social-element name="instagram" href="https://www.instagram.com/" background-color="#E1306C" />
+          <mj-social-element name="facebook" href="https://www.facebook.com/" background-color="#3b5998" />
+          <mj-social-element name="youtube" href="https://www.youtube.com/" background-color="#FF0000" />
+        </mj-social>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 20px 10px">
+      <mj-column>
+        <mj-text align="center" font-weight="400px" line-height="100%">
+          If you have any questions or concerns, please reply this email.
+        </mj-text>
+        <mj-text align="center" line-height="100%">
+          © 2024 QRGEN, Inc. All rights reserved.
+        </mj-text>
+        <mj-text align="center" line-height="100%">
+          548 Market St #63411, San Francisco, CA 94104-5401
+        </mj-text>
+        <mj-text align="center" font-size="14px">
+          <a href="#" class="footer-link">Privacy policy</a> | <a href="#" class="footer-link">Contact us</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

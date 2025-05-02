@@ -1,0 +1,41 @@
+import { User } from './entities/user.entity';
+import { Repository } from 'typeorm';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { IResponseMessage } from '../interfaces/response-message.interface';
+import { SettingsService } from '../settings/settings.service';
+import { QrFoldersService } from '../qr-folders/qr-folders.service';
+import { AddMemberDto } from './dto/create-member.dto';
+import { ModulesService } from '../modules/modules.service';
+import { AuthService } from '../auth/auth.service';
+import { UpdatePasswordDto } from './dto/update-password.dto';
+import { UpdateMemberDto } from './dto/update-member.dto';
+export declare class UsersService {
+    private readonly userRepository;
+    private readonly settingService;
+    private readonly foldersService;
+    private readonly modulesService;
+    private readonly authService;
+    constructor(userRepository: Repository<User>, settingService: SettingsService, foldersService: QrFoldersService, modulesService: ModulesService, authService: AuthService);
+    create(createUserDto: CreateUserDto): Promise<User>;
+    findOne(id: number): Promise<User>;
+    findById(id: number): Promise<User>;
+    findOneByEmail(email: string): Promise<User>;
+    findOneByStripeId(stripeId: string): Promise<User>;
+    findAll(): Promise<User[]>;
+    updateRefreshToken(userId: number, refreshToken?: string): Promise<User>;
+    validateUser(email: string, password: string): Promise<User>;
+    update(id: number, updateUserDto: UpdateUserDto): Promise<User>;
+    remove(id: number): Promise<IResponseMessage>;
+    addMember(parentAccountId: number, addMemberDto: AddMemberDto): Promise<User>;
+    getMembers(userId: number): Promise<User>;
+    updatePassword(userId: number, updatePasswordDto: UpdatePasswordDto): Promise<{
+        message: string;
+    }>;
+    updateMember(userId: number, memberId: number, updateMemberDto: UpdateMemberDto): Promise<IResponseMessage>;
+    deleteMember(userId: number, memberId: number): Promise<void>;
+    saveUser(user: User): Promise<void>;
+    generateToken(id: any): Promise<User>;
+    findByAuthToken(authToken: string): Promise<User | null>;
+    generateUUID(total?: any): string;
+}

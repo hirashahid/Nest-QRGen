@@ -1,0 +1,21 @@
+export declare enum QrTypeEnum {
+    WEBSITE = "Website",
+    VIDEO = "Video",
+    VCARD_PLUS = "vCard Plus",
+    EVENT = "Event",
+    PRODUCT = "Product",
+    COUPON = "Coupon",
+    PDF = "PDF",
+    PLAYLIST = "Playlist",
+    IMAGE = "Images",
+    BUSINESS = "Business",
+    APPS = "Apps",
+    SOCIAL_MEDIA = "Social Media",
+    LIST_OF_LINKS = "List of links",
+    WIFI = "WiFi",
+    VCARD = "vCard",
+    EMAIL = "Email",
+    WHATSAPP = "WhatsApp",
+    TEXT = "SMS",
+    URL = "URL"
+}
